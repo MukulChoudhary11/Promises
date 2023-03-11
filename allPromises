@@ -1,1 +1,20 @@
+const user={
+    name:mukul,
+    lastActivity:'3 march 2023'
+};
 
+function updateLastUserActivityTime(){
+    return new Promise((resolve,reject)=>{
+     setInterval(()=>{
+        user.lastActivity=new Date().getTime;
+    resolve(user.lastActivity);
+     },1000)   
+    })
+}
+userUpdatesPost(){
+    Promise.all([createPost,updateLastUserActivityTime])
+    .then(([crestePostresolve,updatelastactivitytimeresolves])=> {
+        console.log(updatelastactivitytimeresolves);
+    })
+    .catch(err=>console.log(err));
+}
